@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Template32">
+</Property><Property Name="Solution File" Value="G:\CIS244\Labs\Lab 8\Common\Template32\Template32.sln">
+</Property><Property Name="User Options File" Value="G:\CIS244\Labs\Lab 8\Common\Template32\Template32.suo">
+</Property><Property Name="Date" Value="Wednesday, April 03, 2013">
+</Property><Property Name="Time" Value="16:02 PM">
+</Property><Property Name="Log Number" Value="2">
+</Property></Properties><Event ErrorLevel="2" Project="" Source="Template32.sln" Description="Error creating backup file: G:\CIS244\Labs\Lab 8\Common\Template32\Template32.sln.old">
+</Event><Event ErrorLevel="2" Project="" Source="Template32.suo" Description="Error creating backup file: G:\CIS244\Labs\Lab 8\Common\Template32\Template32.suo.old">
+</Event><Event ErrorLevel="0" Project="Template32" Source="Template32.vcproj" Description="Converting project file 'G:\CIS244\Labs\Lab 8\Common\Template32\Template32.vcproj'.">
+</Event><Event ErrorLevel="1" Project="Template32" Source="Template32.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="Template32" Source="Template32.vcproj" Description="Done converting to new project file 'G:\CIS244\Labs\Lab 8\Common\Template32\Template32.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="Template32" Source="Template32.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="Template32.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="Template32.sln" Description="Converted">
+</Event></UpgradeLog>

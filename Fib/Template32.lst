@@ -1,0 +1,114 @@
+Microsoft (R) Macro Assembler Version 12.00.21005.1	    04/06/16 13:29:01
+fib.as							     Page 1 - 1
+
+
+				;@Author:		John Lahut
+				;@Date:			3/8/2016
+				;@Project:		Lab6
+				;@Filename:		Lab6p1.asm
+				;@I/O:			All I/O are done via console
+				;@Assumptions:	None
+				;@Purpose:		Demonstrates use of direct and indirect indexing of lists stored in asm
+
+
+
+				title    fib.asm
+
+				.386
+				.model flat, stdcall	;Protected Mode
+
+				;Declare named constants
+ = 00000008			STACK_OFFSET equ 8
+
+				;External prototypes from the Irvine Library
+
+				ReadInt proto
+				WriteInt proto
+				WriteChar proto
+				ExitProcess proto, :dword
+
+
+				.stack 100h
+
+ 00000000			.data
+
+ 00000000 00000008		input sdword 8
+						
+ 00000000			.code
+
+
+ 00000000			main proc
+
+ 00000000  FF 35 00000000 R		push input				;bottom of stack contains # 
+ 00000006  E8 00000000			Call fib				;find the fibbonacci sequence for the number given above
+					
+
+ 0000000B			main endp
+
+
+
+
+ 0000000B			fib proc
+
+ 0000000B  55				push ebp						;preserve base stack pointer
+ 0000000C  8B EC			mov ebp, esp					; ebp = esp
+
+ 0000000E  8B 45 08			mov eax, [ebp+STACK_OFFSET]		;input is located 8 bytes above the base stack pointer
+ 00000011  E8 00000000 E		Call WriteInt
+
+ 00000016			fib endp
+
+
+
+ 00000016  6A 00		push 0
+ 00000018  E8 00000000 E	Call ExitProcess
+
+
+
+				end main
+Microsoft (R) Macro Assembler Version 12.00.21005.1	    04/06/16 13:29:01
+fib.as							     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+FLAT . . . . . . . . . . . . . .	GROUP
+STACK  . . . . . . . . . . . . .	32 Bit	 00000100 DWord	  Stack	  'STACK'	 
+_DATA  . . . . . . . . . . . . .	32 Bit	 00000004 DWord	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 0000001D DWord	  Public  'CODE'	
+
+
+Procedures, parameters, and locals:
+
+                N a m e                 Type     Value    Attr
+
+ExitProcess  . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
+ReadInt  . . . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
+WriteChar  . . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
+WriteInt . . . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
+fib  . . . . . . . . . . . . . .	P Near	 0000000B _TEXT	Length= 0000000B Public STDCALL
+main . . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 0000000B Public STDCALL
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 00000000h   
+@DataSize  . . . . . . . . . . .	Number	 00000000h   
+@Interface . . . . . . . . . . .	Number	 00000003h   
+@Model . . . . . . . . . . . . .	Number	 00000007h   
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 FLAT
+@fardata?  . . . . . . . . . . .	Text   	 FLAT
+@fardata . . . . . . . . . . . .	Text   	 FLAT
+@stack . . . . . . . . . . . . .	Text   	 FLAT
+STACK_OFFSET . . . . . . . . . .	Number	 00000008h   
+input  . . . . . . . . . . . . .	DWord	 00000000 _DATA	
+
+	   0 Warnings
+	   0 Errors
